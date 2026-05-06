@@ -146,8 +146,8 @@ function DailyGoalProgress() {
 // 快捷功能网格
 function QuickActions({ onNavigate }: { onNavigate: (p: SubPage) => void }) {
   const quickActions = [
-    { icon: '💬', label: '聊天助手', gradient: 'from-qqBlue-500 to-qqBlue-600', action: () => onNavigate({ type: 'chat', friendName: '小芳', friendAvatar: '' }) },
-    { icon: '👥', label: '群聊管家', gradient: 'from-accent-purple to-purple-600', action: () => onNavigate({ type: 'groupchat', groupName: '老友群' }) },
+    { icon: '💬', label: '聊天助手', gradient: 'from-qqBlue-500 to-qqBlue-600', action: () => onNavigate({ type: 'chat', friendName: '小芳', friendAvatar: '', convId: 'fang' }) },
+    { icon: '👥', label: '群聊管家', gradient: 'from-accent-purple to-purple-600', action: () => onNavigate({ type: 'groupchat', groupName: '老友群', groupId: 'game' }) },
     { icon: '🎉', label: '社交事件', gradient: 'from-accent-pink to-pink-600', action: () => onNavigate({ type: 'social-event' }) },
     { icon: '✨', label: '内容创作', gradient: 'from-accent-orange to-orange-600', action: () => onNavigate({ type: 'content-creator' }) },
     { icon: '💝', label: '关系维护', gradient: 'from-red-500 to-rose-600', action: () => onNavigate({ type: 'relation-health' }) },
@@ -232,7 +232,7 @@ function SceneSuggestion({ onNavigate }: { onNavigate: (p: SubPage) => void }) {
             whileTap={{ scale: 0.95 }}
             onClick={() => {
               const action = suggestion.action as any
-              if (action === 'chat') onNavigate({ type: 'chat', friendName: '小芳', friendAvatar: '' })
+              if (action === 'chat') onNavigate({ type: 'chat', friendName: '小芳', friendAvatar: '', convId: 'fang' })
               else if (action === 'dynamics') {}
               else if (action === 'social-event') onNavigate({ type: 'social-event' })
               else if (action === 'content-creator') onNavigate({ type: 'content-creator' })

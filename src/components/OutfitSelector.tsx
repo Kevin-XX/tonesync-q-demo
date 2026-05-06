@@ -9,7 +9,7 @@ interface OutfitSelectorProps {
   onClose: () => void
 }
 
-const allOutfits: PenguinOutfit[] = ['default', 'cyber', 'festival', 'star', 'winter', 'sport', 'ocean', 'panda', 'royal']
+const allOutfits: PenguinOutfit[] = ['default', 'cyber', 'festival', 'star', 'winter', 'sport', 'ocean', 'panda', 'royal', 'libai', 'change', 'wukong', 'dianwei', 'daji', 'xiaoqiao', 'yao']
 
 const outfitDescriptions: Record<PenguinOutfit, string> = {
   default: '经典QQ造型，红围巾是标配',
@@ -21,6 +21,13 @@ const outfitDescriptions: Record<PenguinOutfit, string> = {
   ocean: '沙滩夏日，太阳镜草帽',
   panda: '国宝熊猫，稀有黑白配色',
   royal: '皇室贵族，紫色权杖在手',
+  libai: '李白·谪仙，诗仙风范，剑气如虹',
+  change: '嫦娥·月神，仙气飘飘，月光流辉',
+  wukong: '孙悟空·齐天，金箍棒在手，火眼金睛',
+  dianwei: '典韦·虎痴，霸气侧漏，虎背熊腰',
+  daji: '妲己·九尾，妖娆魅惑，仙狐降世',
+  xiaoqiao: '小乔·千纸鹤，温婉如水，才情兼备',
+  yao: '瑶·仙鹿，可爱灵动，仙气环绕',
 }
 
 const outfitColors: Record<PenguinOutfit, string> = {
@@ -33,6 +40,13 @@ const outfitColors: Record<PenguinOutfit, string> = {
   ocean: 'from-cyan-400 to-blue-500',
   panda: 'from-gray-100 to-gray-300',
   royal: 'from-purple-400 to-purple-600',
+  libai: 'from-blue-400 to-cyan-500',
+  change: 'from-pink-300 to-purple-400',
+  wukong: 'from-yellow-500 to-orange-500',
+  dianwei: 'from-red-600 to-red-800',
+  daji: 'from-pink-400 to-purple-500',
+  xiaoqiao: 'from-pink-200 to-rose-300',
+  yao: 'from-green-300 to-teal-400',
 }
 
 export function OutfitSelector({ currentOutfit, onSelect, onClose }: OutfitSelectorProps) {

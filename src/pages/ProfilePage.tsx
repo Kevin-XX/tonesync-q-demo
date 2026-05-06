@@ -134,7 +134,7 @@ export function ProfilePage({ onNavigate }: ProfilePageProps) {
 
             <motion.button
               whileTap={{ scale: 0.95 }}
-              onClick={() => onNavigate({ type: 'chat', friendName: '同频小Q', friendAvatar: 'Q' })}
+              onClick={() => onNavigate({ type: 'chat', friendName: '同频小Q', friendAvatar: 'Q', convId: 'tonesync' })}
               className="bg-[#12B7F5] text-white text-[12px] font-bold px-3 py-2 rounded-xl shadow-sm flex-shrink-0"
             >
               找小Q

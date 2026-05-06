@@ -5,7 +5,7 @@ import {
   Sparkles, Star, Heart, BookOpen, Trophy, Clock, ChevronRight, X,
   TrendingUp, Flame, Zap, Music, Gamepad2, Coffee, Cake, Diamond,
   PartyPopper, Sun, Cloud, Moon, CloudRain, Wind, Snowflake, Mountain,
-  TreePine, Waves, Palette, Sofa, LampDesk, Plant, Frame, Award, Scroll,
+  TreePine, Waves, Palette, Sofa, LampDesk, TreePine as Plant, Frame, Award, Scroll,
   Milestone, Flower2, Wand2, MessageCircle, ThumbsUp, Send
 } from 'lucide-react'
 import { PenguinQ, type PenguinOutfit, type PenguinMood } from '../components/PenguinQ'
