@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build tools / temp scripts
+html_to_pdf.cjs
+gen_pdf.py
+generate_pdf.py
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# WorkBuddy internal data (contains secrets)
+.workbuddy/
+
+# Env files
+.env
+.env.local
+
+# Generated files
+*.pdf
+generated-images/

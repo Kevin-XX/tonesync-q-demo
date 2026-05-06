@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>同频小Q - 竞赛提交文档</title>
+<style>
+  @page { size: A4; margin: 1.8cm 2cm 2cm 2cm; }
+  body { font-family: "Microsoft YaHei", "微软雅黑", SimHei, sans-serif; font-size: 10pt; color: #333; line-height: 1.6; margin: 0; padding: 0; }
+  h1 { font-size: 15pt; color: #1A1A2E; border-bottom: 2px solid #12B7F5; padding-bottom: 6px; margin-top: 18px; page-break-after: avoid; }
+  h2 { font-size: 12pt; color: #12B7F5; margin-top: 12px; margin-bottom: 5px; page-break-after: avoid; }
+  h3 { font-size: 10.5pt; color: #1A1A2E; margin-top: 8px; margin-bottom: 3px; }
+  p { margin: 4px 0; text-align: justify; }
+  ul, ol { margin: 4px 0; padding-left: 20px; }
+  li { margin: 3px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9pt; }
+  th { background: #12B7F5; color: white; padding: 5px 8px; text-align: left; font-weight: bold; }
+  td { padding: 4px 8px; border: 0.5px solid #DDDDDD; vertical-align: top; }
+  tr:nth-child(even) { background: #F5F5F5; }
+  .cover-banner { background: #12B7F5; color: white; padding: 8px 12px; font-size: 11pt; font-weight: bold; text-align: center; }
+  .cover-title { font-size: 26pt; font-weight: bold; color: #12B7F5; text-align: center; margin: 30px 0 8px 0; }
+  .cover-sub { text-align: center; color: #666; font-size: 11pt; margin-bottom: 5px; }
+  .cover-en { text-align: center; color: #12B7F5; font-size: 14pt; margin-bottom: 20px; }
+  .info-table td:first-child { background: #F5F5F5; font-weight: bold; width: 20%; }
+  .dim-header { background: #12B7F5; color: white; padding: 5px 10px; margin-top: 10px; font-weight: bold; font-size: 10.5pt; }
+  .dim-header-alt { background: #7C4DFF; }
+  .dim-header-green { background: #00C853; }
+  .dim-header-orange { background: #FF6D00; }
+  .dim-header-red { background: #E53935; }
+  .dim-header-gold { background: #F5A623; }
+  .inn-box { background: #F0FAFF; border: 1.5px solid #12B7F5; padding: 8px 12px; margin: 8px 0; }
+  .note-box { background: #FFF9E6; border-left: 3px solid #F5A623; padding: 6px 10px; margin: 6px 0; font-size: 9pt; }
+  .page-break { page-break-before: always; }
+  .center { text-align: center; }
+  .score-stars { color: #F5A623; }
+  .check { color: #00C853; }
+  .warn { color: #FF6D00; }
+  .footer { position: running(footer); text-align: center; font-size: 8pt; color: #999; border-top: 1px solid #12B7F5; padding-top: 4px; }
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    table { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== 封面 ===== -->
+<div class="cover-banner">QQ × AI 创新命题赛道</div>
+<div class="cover-title">同频小Q</div>
+<div class="cover-en">ToneSync Q</div>
+<div class="cover-sub">以 AI 为翼，让 QQ 社交更有温度、更具想象力</div>
+<div class="cover-sub" style="font-size:10pt; color:#999; margin-bottom:25px;">产品提交说明文档 · 2026-05-06</div>
+
+<table class="info-table">
+  <tr><td>产品名称</td><td>同频小Q（ToneSync Q）</td></tr>
+  <tr><td>参赛赛道</td><td>QQ × AI 创新（题目三）</td></tr>
+  <tr><td>产品定位</td><td>内嵌于QQ全场景的主动式AI社交伴侣</td></tr>
+  <tr><td>技术栈</td><td>React + Vite + TypeScript + Tailwind CSS + 混元大模型（可切换）</td></tr>
+  <tr><td>版本</td><td>Demo v3.0（可直接运行）</td></tr>
+  <tr><td>提交文件</td><td>源代码（.zip）+ Demo视频（.mp4）+ 说明文档（本PDF）</td></tr>
+</table>
+
+<div style="margin-top:15px;">
+<table>
+  <tr><th colspan="4" style="text-align:center;">评分维度自检摘要</th></tr>
+  <tr><th>评分维度</th><th>当前自评</th><th>目标</th><th>状态</th></tr>
+  <tr><td>赛道适配性</td><td>★★★★★</td><td>★★★★★</td><td style="color:#00C853;">✅ 优秀</td></tr>
+  <tr><td>作品完整性</td><td>★★★★☆</td><td>★★★★★</td><td style="color:#FF6D00;">🟡 提升中</td></tr>
+  <tr><td>创新性</td><td>★★★★★</td><td>★★★★★</td><td style="color:#00C853;">✅ 优秀</td></tr>
+  <tr><td>用户洞察深度</td><td>★★★★★</td><td>★★★★★</td><td style="color:#00C853;">✅ 优秀</td></tr>
+  <tr><td>方案AI原生性</td><td>★★★★☆</td><td>★★★★★</td><td style="color:#FF6D00;">🟡 良好</td></tr>
+  <tr><td>落地可行性</td><td>★★★★☆</td><td>★★★★★</td><td style="color:#FF6D00;">🟡 良好</td></tr>
+  <tr><td>商业化能力</td><td>★★★★☆</td><td>★★★★★</td><td style="color:#FF6D00;">🟡 良好</td></tr>
+</table>
+</div>
+
+<!-- ===== 第一章 ===== -->
+<div class="page-break"></div>
+<h1>一、项目概览</h1>
+
+<h2>1.1 产品定位</h2>
+<p>「同频小Q」不是一个冰冷的机器人，而是一个<strong>懂社交、懂语境、懂关系、懂情绪</strong>的 AI 社交伙伴。它深度嵌入 QQ 的多元社交生态中，通过<strong>主动感知场景、理解用户意图、贯穿核心流程</strong>，成为连接用户与社交的粘性纽带。</p>
+
+<div class="inn-box">
+  <p><strong>一句话定义：</strong>同频小Q 是一个<strong style="color:#12B7F5;">内嵌于QQ全场景的主动式AI社交伴侣</strong>，它能感知社交状态与关系图谱，在最合适的时机主动发起跨场景联动行动（聊天、群聊、动态），将孤独的社交行为转化为高频的互动体验。</p>
+</div>
+
+<h2>1.2 目标用户画像</h2>
+<table>
+  <tr><th>用户分层</th><th>核心特征</th><th>社交痛点</th><th>AI需求</th></tr>
+  <tr><td><strong>Z世代学生党<br>(14-22岁)</strong></td><td>高频社交、追求个性化、时间碎片化、QQ生态重度用户</td><td>社交启动压力大、不知如何回复、群聊信息过载、表达缺乏个性</td><td>需要一个"懂我"的社交伙伴，帮破冰、帮表达</td></tr>
+  <tr><td><strong>年轻职场人<br>(23-30岁)</strong></td><td>跨圈层社交、注重效率、情感表达含蓄</td><td>社交疲惫、维护关系成本高、表达不够有趣、弱关系逐渐冷淡</td><td>需要智能关系维护工具，让社交更轻松有温度</td></tr>
+  <tr><td><strong>兴趣社群运营者</strong></td><td>管理多个群、需要活跃氛围、内容产出压力大</td><td>群管理耗时、内容创意枯竭、用户互动率低、玩法单一</td><td>需要AI内容助手和智能群管，激活社群活力</td></tr>
+</table>
+
+<h2>1.3 Demo已实现功能全景</h2>
+<table>
+  <tr><th>功能模块</th><th>实现内容</th><th>完成度</th><th>对应评分维度</th></tr>
+  <tr><td><strong>小Q伴侣系统（6Tab）</strong></td><td>换装/技能/羁绊/家园/成就/资料，王者荣耀联动皮肤（李白/嫦娥/小乔/瑶）</td><td>100%</td><td>完整性 + 创新性</td></tr>
+  <tr><td><strong>智能聊天助手</strong></td><td>AI回复建议（3种风格）/ 文字润色 / 话题推荐 / AI思考动画</td><td>90%</td><td>AI原生性</td></tr>
+  <tr><td><strong>群聊管家（Demo）</strong></td><td>群聊摘要 / 待办提取 / 热点分析 / 生日提醒联动</td><td>85%</td><td>完整性</td></tr>
+  <tr><td><strong>社交事件触发</strong></td><td>生日→一键祝福 / 情绪低落→关怀触发 / 沉默预警→破冰建议</td><td>80%</td><td>创新性</td></tr>
+  <tr><td><strong>情绪感知联动</strong></td><td>情绪可视化 / 心情日记 / 主动关怀推送</td><td>75%</td><td>创新性</td></tr>
+  <tr><td><strong>小Q人格系统</strong></td><td>AI生成独特性格 / 口头禅 / 成长故事 / 日记自动记录</td><td>80%</td><td>创新性</td></tr>
+  <tr><td><strong>技术架构展示</strong></td><td>四层架构图 / 隐私保护措施 / MVP路线图</td><td>90%</td><td>落地可行性</td></tr>
+</table>
+
+<h2>1.4 技术栈</h2>
+<table>
+  <tr><th>层级</th><th>技术选型</th><th>说明</th></tr>
+  <tr><td><strong>前端框架</strong></td><td>React 18 + TypeScript</td><td>类型安全，组件化开发</td></tr>
+  <tr><td><strong>构建工具</strong></td><td>Vite 5</td><td>极速HMR，开发体验优秀</td></tr>
+  <tr><td><strong>样式方案</strong></td><td>Tailwind CSS</td><td>原子化CSS，快速迭代</td></tr>
+  <tr><td><strong>AI引擎</strong></td><td>腾讯混元大模型（OpenAI兼容接口）</td><td>通过阿里云百炼调用Qwen，可切换混元</td></tr>
+  <tr><td><strong>状态管理</strong></td><td>React Context + useState</td><td>轻量级，适合Demo展示</td></tr>
+  <tr><td><strong>动画库</strong></td><td>Framer Motion</td><td>流畅的组件过渡与交互反馈</td></tr>
+  <tr><td><strong>运行环境</strong></td><td>Web（响应式，支持移动端比例）</td><td>可嵌入QQ小程序/H5</td></tr>
+</table>
+
+<!-- ===== 第二章 ===== -->
+<div class="page-break"></div>
+<h1>二、五大核心创新（创新性）</h1>
+
+<div class="dim-header">创新一：语境感知型AI（Context-Aware AI）</div>
+<p>区别于市面上通用的聊天机器人，同频小Q的核心差异在于<strong>深度嵌入QQ社交语境</strong>：</p>
+<ul>
+  <li><strong>身份感知</strong>：识别用户身份（学生/职场人/群主）</li>
+  <li><strong>关系感知</strong>：识别对话对象关系（好友/群友/陌生人）</li>
+  <li><strong>场景感知</strong>：自动识别场景（破冰/续聊/群管/内容创作）</li>
+  <li><strong>情绪感知</strong>：分析聊天语义情绪，主动调整互动策略</li>
+  <li><strong>平台感知</strong>：深度调用QQ功能（空间/群/频道/厘米秀）</li>
+</ul>
+<p><strong>技术实现</strong>：基于QQ社交图谱 + 对话上下文 + 用户行为数据的多模态语境理解引擎</p>
+
+<div class="dim-header dim-header-alt">创新二：主动式社交代理（Proactive Social Agent）</div>
+<p>不是被动等待指令，而是<strong>主动感知、主动建议、主动执行</strong>：</p>
+<ul>
+  <li><strong>主动感知</strong>：监测群聊热度、好友互动频率、话题趋势、用户情绪、特殊日期</li>
+  <li><strong>主动建议</strong>：在合适时机推送「该发消息了」「这个话题你可能感兴趣」「今天是TA生日」</li>
+  <li><strong>主动执行</strong>：一键执行复杂操作（批量管理/自动回复/内容生成/社交破冰）</li>
+</ul>
+
+<div class="dim-header dim-header-green">创新三：社交事件触发器（Social-Event Trigger）</div>
+<p><strong>首次将「社交事件」作为互动触发器</strong>——生日、纪念日、共同兴趣、情绪变化等事件自动转化为个性化互动内容推送：</p>
+<ul>
+  <li>好友生日 → 自动生成祝福文案，推荐发送给谁</li>
+  <li>共同兴趣更新 → 发起「这个话题你们可以聊聊」建议</li>
+  <li>情绪变化 → 主动关怀或庆祝，联动好友互动</li>
+  <li>沉默预警 → 检测到关系冷淡，主动推荐破冰话题</li>
+</ul>
+
+<div class="dim-header dim-header-orange">创新四：小Q人格化 + 社交副本（Gamified Agent Evolution）</div>
+<p>将小Q设计为<strong>可养成、可互动、可展示</strong>的虚拟伙伴：</p>
+<ul>
+  <li><strong>小Q人格系统</strong>：AI为小Q生成独特性格（毒舌/温柔/二次元/古风）、专属口头禅和成长故事</li>
+  <li><strong>社交副本</strong>：AI智能匹配好友组建「兴趣小队」，设置共同目标，通过协作和竞争强化好友关系链</li>
+  <li><strong>养成体系</strong>：通过日常使用积累经验值，解锁新能力（文案风格/表情包/语音包/皮肤）</li>
+  <li><strong>展示系统</strong>：小Q形象可展示在QQ资料卡、空间、群名片中</li>
+</ul>
+
+<div class="dim-header dim-header-red">创新五：情绪感知联动（Emotion-Aware Linkage）</div>
+<p>结合聊天语境分析用户情绪，在用户低落时主动「安慰」，高兴时发起庆祝社交：</p>
+<ul>
+  <li><strong>情绪低落</strong> → 小Q主动发来「安慰信」，好友收到「TA需要陪伴」通知</li>
+  <li><strong>情绪高涨</strong> → 小Q发起「庆祝派对」，邀请好友一起参与</li>
+  <li><strong>关系冷淡</strong> → 小Q检测沉默时长，主动推荐破冰话题</li>
+</ul>
+
+<!-- ===== 第三章 ===== -->
+<div class="page-break"></div>
+<h1>三、评分维度详解与优化说明</h1>
+
+<div class="dim-header">① 赛道适配性（满分10分）</div>
+<ul>
+  <li class="check">✅ 深度结合QQ社交场景，非通用AI方案</li>
+  <li class="check">✅ 覆盖私聊/群聊/空间/资料卡等QQ核心场景</li>
+  <li class="check">✅ 产品形态与QQ生态高度契合（可嵌入/可扩展）</li>
+  <li class="warn">🔧 优化建议：增加QQ厘米秀/频道场景的联动演示</li>
+</ul>
+<p><strong>自评：9-10分</strong></p>
+
+<div class="dim-header dim-header-alt">② 作品完整性（满分25分）</div>
+<ul>
+  <li class="check">✅ 已完成7大功能模块，覆盖核心社交场景</li>
+  <li class="check">✅ 小Q伴侣6Tab完整实现，养成体系闭环</li>
+  <li class="check">✅ 主动触发/事件感知等关键Demo已实现</li>
+  <li class="warn">🟡 待完善：社交副本多人实时对战、B端群管后台</li>
+</ul>
+<p><strong>自评：20-23分</strong></p>
+
+<div class="dim-header dim-header-green">③ 创新性（满分20分）</div>
+<ul>
+  <li class="check">✅ 五大创新：语境感知/主动代理/事件触发/人格养成/情绪联动</li>
+  <li class="check">✅ 「社交事件触发器」为行业首创概念</li>
+  <li class="check">✅ 小Q人格化+社交副本，差异化竞争壁垒明显</li>
+  <li class="warn">🟡 待展示：需在Demo视频中重点演示创新流程</li>
+</ul>
+<p><strong>自评：17-20分</strong></p>
+
+<div class="dim-header" style="background:#0A9BD4;">④ 用户洞察深度（满分10分）</div>
+<ul>
+  <li class="check">✅ 三类用户画像（学生党/职场人/运营者）</li>
+  <li class="check">✅ 五大核心痛点深度拆解，有数据支撑</li>
+  <li class="check">✅ 四个具体场景还原，可还原度高</li>
+  <li class="check">✅ 方案与痛点映射矩阵，逻辑严密</li>
+</ul>
+<p><strong>自评：9-10分</strong></p>
+
+<div class="dim-header dim-header-orange">⑤ 方案AI原生性（满分15分）</div>
+<ul>
+  <li class="check">✅ 所有核心功能均依赖AI能力，非规则引擎可实现</li>
+  <li class="check">✅ 「AI思考过程」可视化（理解语境→生成回复→完成）</li>
+  <li class="check">✅ 支持Prompt自定义，体现LLM灵活调用</li>
+  <li class="warn">🟡 待完善：实时流式输出、多轮对话上下文管理</li>
+</ul>
+<p><strong>自评：12-14分</strong></p>
+
+<div class="dim-header dim-header-alt">⑥ 落地可行性（满分10分）</div>
+<ul>
+  <li class="check">✅ 四层技术架构清晰（应用层/能力层/模型层/数据层）</li>
+  <li class="check">✅ 分4阶段实施路径（MVP→场景扩展→关系深化→生态融合）</li>
+  <li class="check">✅ 隐私保护措施明确（端侧处理/数据脱敏/用户授权）</li>
+  <li class="check">✅ 技术风险识别与应对策略完整</li>
+</ul>
+<p><strong>自评：8-10分</strong></p>
+
+<div class="dim-header dim-header-gold">⑦ 商业化能力（满分10分）</div>
+<ul>
+  <li class="check">✅ 五种盈利模式（会员/道具/副本/企业服务/流量变现）</li>
+  <li class="check">✅ 四大核心壁垒（数据/场景/关系/技术/生态）</li>
+  <li class="check">✅ VIP权益体系+虚拟商城已实现Demo入口</li>
+  <li class="warn">🟡 待完善：ARPU测算、用户转化率预估</li>
+</ul>
+<p><strong>自评：7-9分</strong></p>
+
+<!-- ===== 第四章 ===== -->
+<div class="page-break"></div>
+<h1>四、Demo演示视频录制指南</h1>
+
+<h2>4.1 录制参数建议</h2>
+<table>
+  <tr><th>项目</th><th>建议参数</th></tr>
+  <tr><td><strong>分辨率</strong></td><td>1920×1080（16:9）或 1080×1920（9:16，手机比例）</td></tr>
+  <tr><td><strong>帧率</strong></td><td>30fps</td></tr>
+  <tr><td><strong>格式</strong></td><td>MP4（H.264编码）</td></tr>
+  <tr><td><strong>旁白</strong></td><td>清晰普通话，语速适中，配背景音乐（音量&lt;10%）</td></tr>
+  <tr><td><strong>浏览器设置</strong></td><td>Chrome → F12 → Toggle Device Toolbar → iPhone 14 Pro（宽420px）</td></tr>
+  <tr><td><strong>录制工具</strong></td><td>OBS Studio（免费）/ Bandicam / PowerPoint录制</td></tr>
+</table>
+
+<h2>4.2 分镜脚本（7段式，总长6-8分钟）</h2>
+<table>
+  <tr><th>段落</th><th>内容</th><th>时长</th><th>对应评分维度</th></tr>
+  <tr><td><strong>Part 1<br>开场介绍</strong></td><td>打开Demo展示小Q形象，快速滑动底部6个Tab，旁白介绍产品定位</td><td>30s</td><td>赛道适配性</td></tr>
+  <tr><td><strong>Part 2<br>痛点共鸣</strong></td><td>展示4个痛点场景（社交启动难/信息过载/关系倦怠/创作枯竭）</td><td>45s</td><td>用户洞察深度</td></tr>
+  <tr><td><strong>Part 3<br>智能聊天助手</strong></td><td>长按输入框→AI思考动画→3种回复→润色→发送（重点展示AI思考过程！）</td><td>60s</td><td>AI原生性</td></tr>
+  <tr><td><strong>Part 4<br>群聊管家</strong></td><td>进入群聊→群聊摘要→待办提取→生日祝福联动</td><td>45s</td><td>作品完整性</td></tr>
+  <tr><td><strong>Part 5<br>社交事件+养护</strong></td><td>生日提醒→一键祝福→小Q进化6Tab→王者联动皮肤（李白/嫦娥/小乔/瑶）</td><td>90s</td><td>创新性+完整性</td></tr>
+  <tr><td><strong>Part 6<br>创新亮点</strong></td><td>逐一口述五大创新点，配合画面切换，强调「社交事件触发器」首创性</td><td>45s</td><td>创新性</td></tr>
+  <tr><td><strong>Part 7<br>技术+商业化</strong></td><td>四层架构→隐私保护→VIP中心→商城，结尾Slogan定格</td><td>60s</td><td>落地可行性+商业化</td></tr>
+</table>
+
+<h2>4.3 录制注意事项</h2>
+<div class="note-box">
+  <p><strong>⚠️ 关键注意：</strong></p>
+  <ul>
+    <li>每个点击操作后<strong>停顿1-2秒</strong>，让评委看清界面变化</li>
+    <li><strong>不要跳过「AI思考中」动画</strong>，这是体现AI原生性的关键</li>
+    <li>旁白要清晰说明当前在展示什么功能、解决了什么痛点</li>
+    <li><strong>王者联动皮肤是亮点</strong>，多展示几套（李白→嫦娥→小乔→瑶）</li>
+    <li>结尾一定要有<strong>Slogan定格</strong>，加深评委印象</li>
+  </ul>
+</div>
+<div class="note-box" style="background:#F0FFF0;border-color:#00C853;">
+  <p><strong>✅ 建议：</strong></p>
+  <ul>
+    <li>提前演练2-3遍，控制好总时长在<strong>8分钟以内</strong></li>
+    <li>若某段操作失误，不必重录整段，后期剪辑拼接即可</li>
+    <li>录制时关闭QQ/微信等消息通知，避免打断</li>
+  </ul>
+</div>
+
+<!-- ===== 第五章 ===== -->
+<div class="page-break"></div>
+<h1>五、Demo启动与访问说明</h1>
+
+<h2>5.1 本地启动步骤</h2>
+<table>
+  <tr><th>步骤</th><th>操作命令</th></tr>
+  <tr><td><strong>1. 安装依赖</strong></td><td>在终端执行：<br><code>cd 小小Q项目目录</code><br><code>npm install</code></td></tr>
+  <tr><td><strong>2. 启动开发服务器</strong></td><td>执行：<br><code>npx vite --port 5173 --host</code><br>服务器将在 <code>http://localhost:5173</code> 启动</td></tr>
+  <tr><td><strong>3. 打开浏览器访问</strong></td><td>Chrome访问 <code>http://localhost:5173</code><br>按F12 → Toggle Device Toolbar → 选择iPhone 14 Pro（宽420px模拟手机）</td></tr>
+  <tr><td><strong>4. 开始演示</strong></td><td>按照第四章的脚本逐一演示各功能模块</td></tr>
+</table>
+
+<h2>5.2 项目文件结构</h2>
+<table>
+  <tr><th>目录/文件</th><th>说明</th></tr>
+  <tr><td><code>src/pages/</code></td><td>6个主要页面（Chat/Profile/QEvolution/Messages/VipCenter/Innovation）</td></tr>
+  <tr><td><code>src/components/</code></td><td>可复用组件（PenguinQ/InnovationHighlights/AiThinking等）</td></tr>
+  <tr><td><code>src/data/</code></td><td>Mock数据（AI回复/群聊摘要/皮肤配置）</td></tr>
+  <tr><td><code>src/services/AliyunService.ts</code></td><td>混元大模型接口（OpenAI兼容格式）</td></tr>
+  <tr><td><code>npm run build</code></td><td>构建产物在 <code>dist/</code> 目录，可部署到任何静态服务器</td></tr>
+</table>
+
+<h2>5.3 提交文件清单</h2>
+<table>
+  <tr><th>文件</th><th>格式</th><th>说明</th></tr>
+  <tr><td>源代码</td><td>.zip（不含node_modules）</td><td>完整项目源码，含README.md启动说明</td></tr>
+  <tr><td>Demo演示视频</td><td>.mp4（H.264）</td><td>6-8分钟，配旁白，覆盖全部评分维度</td></tr>
+  <tr><td>说明文档</td><td>.pdf</td><td>本文件，项目概览+创新点+评分详解+录制指南</td></tr>
+  <tr><td>方案文档</td><td>.docx/.pdf</td><td>《同频小Q·最佳融合方案》完整版</td></tr>
+</table>
+
+<!-- ===== 附录 ===== -->
+<div class="page-break"></div>
+<h1>附录：评分标准与项目对照表</h1>
+<table>
+  <tr><th>评分维度</th><th>满分</th><th>权重</th><th>项目对应内容</th></tr>
+  <tr><td><strong>赛道适配性</strong></td><td>10分</td><td>10%</td><td>深度结合QQ社交场景，6大功能嵌入私聊/群聊/空间，产品形态与QQ生态高度契合</td></tr>
+  <tr><td><strong>作品完整性</strong></td><td>25分</td><td>25%</td><td>7大功能模块完整实现，小Q伴侣6Tab闭环，养成体系完整，主动触发已实现</td></tr>
+  <tr><td><strong>创新性</strong></td><td>20分</td><td>20%</td><td>五大创新点（语境感知/主动代理/事件触发/人格养成/情绪联动），社交事件触发器为行业首创</td></tr>
+  <tr><td><strong>用户洞察深度</strong></td><td>10分</td><td>10%</td><td>三类用户画像+五大痛点+四个场景还原，方案与痛点映射矩阵逻辑严密</td></tr>
+  <tr><td><strong>方案AI原生性</strong></td><td>15分</td><td>15%</td><td>所有功能依赖大模型，AI思考过程可视化，支持Prompt自定义</td></tr>
+  <tr><td><strong>落地可行性</strong></td><td>10分</td><td>10%</td><td>四层技术架构+4阶段路线图+隐私保护措施+技术风险应对策略</td></tr>
+  <tr><td><strong>商业化能力</strong></td><td>10分</td><td>10%</td><td>五种盈利模式+四大核心壁垒+长期运营价值+跨业务联动</td></tr>
+</table>
+
+<div style="margin-top:20px; padding:15px; background:#F0FAFF; border:1.5px solid #12B7F5; text-align:center;">
+  <p style="font-size:13pt; color:#12B7F5; font-weight:bold; margin:0;">以 AI 为翼，让 QQ 社交更有温度、更具想象力</p>
+  <p style="font-size:9pt; color:#999; margin:5px 0 0 0;">同频小Q（ToneSync Q）· QQ×AI创新赛道参赛作品 · 2026</p>
+</div>
+
+</body>
+</html>
